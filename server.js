@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serve the static frontend (your index.html and assets inside 'public' folder)
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'Public')));
 
 // Email Transporter Setup (Using Gmail SMTP)
 const transporter = nodemailer.createTransport({
@@ -80,7 +80,7 @@ app.post('/api/contact', async (req, res) => {
 
 // Fallback route (Express 5.x Compatible): Send index.html for any other requests
 app.get('/{*path}', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'Public', 'index.html'));
 });
 
 // ==========================================
