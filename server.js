@@ -89,3 +89,4 @@ app.get('/{*path}', (req, res) => {
 app.listen(PORT, () => {
     console.log(`🚀 System Online: Server running on http://localhost:${PORT}`);
 });
+module.exports = app;
